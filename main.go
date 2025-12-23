@@ -54,6 +54,10 @@ func main() {
 		return
 	}
 
-	resp, _ := provider.Generate(context.Background(), "Hello!")
+	resp, err := provider.Generate(context.Background(), "Hello World!")
+	if err != nil {
+		fmt.Printf("Generate error: %v\n", err)
+		return
+	}
 	fmt.Println(resp)
 }

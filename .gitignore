@@ -1,0 +1,37 @@
+# Compiled binaries and architecture-specific files
+bin/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Output of 'go build'
+bin/
+
+# Environment variables and local secrets (CRITICAL)
+.env
+.envrc
+*.local.env
+
+# Viper/Configuration files
+# Ignore your actual config but keep the template if you make one
+config.yaml
+config.json
+auth.yaml
+
+# Dependency directories
+# (Only needed if you use 'go mod vendor', otherwise Go stores these globally)
+vendor/
+
+# Go test coverage files
+*.out
+*.test
+cp.out
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store

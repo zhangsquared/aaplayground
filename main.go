@@ -40,10 +40,12 @@ func main() {
 	switch llmType {
 	case "gemini":
 		provider, err = llm.InitGeminiClient()
-	case "chatgpt":
+	case "chatgpt": // no free tier
 		provider, err = llm.InitChatGPTClient()
-	case "claude":
+	case "claude": // no free tier
 		provider, err = llm.InitClaudeClient()
+	case "groq":
+		provider, err = llm.InitGroqClient()
 	default:
 		fmt.Printf("Unsupported LLM: %s\n", llmType)
 		return

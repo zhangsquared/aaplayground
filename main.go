@@ -5,11 +5,22 @@ import (
 	"fmt"
 	"strings"
 
-	"aa.zhangsquared.com/llm"
+	"github.com/joho/godotenv"
 	"github.com/spf13/pflag"
 	"github.com/spf13/viper"
+
+	"aa.zhangsquared.com/llm"
 )
 
+// Load the .env file
+func init() {
+	err := godotenv.Load()
+	if err != nil {
+		panic("Error loading .env file")
+	}
+}
+
+// Viper handles the precedence: Flag > Env > Config > Default
 func init() {
 	// 1. Define Flags using pflag
 	pflag.String("model", "gemini", "LLM model to use (gemini, chatgpt, claude)")
@@ -31,7 +42,6 @@ func init() {
 }
 
 func main() {
-	// Viper handles the precedence: Flag > Env > Config > Default
 	llmType := viper.GetString("model")
 
 	var provider llm.ProviderInterface

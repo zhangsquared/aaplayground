@@ -1,4 +1,4 @@
-# AI Agent Playground
+# LLM Client Playground
 
 ```bash
 go run main.go --model=gemini
